@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:lang="${#locale.language}" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" th:content="${session.maxInactiveInterval}">
+    <title th:text="#{pp.application_name} + ' ' + #{pp.login}">G2PG Test Customer Service :: Login</title>
+    <link rel="icon" th:href="@{/images/favicon.ico}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/login.css}">
+    <script type="text/javascript" th:src="@{/js/login.js}" defer></script>
+</head>
+<body>
+    <main>
+        <form id="loginForm" th:action="@{/login}" method="post">
+            <div class="language" th:if="${controller != null and controller.showLanguages}">
+                <label for="locales" class="sr-only">Select Language</label>
+                <select id="locales" class="list" aria-label="Language selection" th:value="${controller.languageId}">
+                    <option th:each="lang : ${controller.languages}" 
+                            th:value="${lang.value.id}" 
+                            th:text="${lang.value.description}"
+                            th:selected="${lang.value.id == controller.languageId}">
+                    </option>
+                </select>
+            </div>
+            <div class="version" th:text="${appVersion}" aria-label="Application version">1.0.0.0</div>
+            
+            <div id="logo" class="logo">
+                <img th:src="@{/images/logo.png}" 
+                     alt="G2PG Test Customer Service Logo" 
+                     width="450" 
+                     height="300">
+            </div>
+            
+            <div class="usernameLabel">
+                <label for="usernameInput" id="usernameLabel" th:text="#{pp.username} + ':'">Username:</label>
+            </div>
+            <div id="username" class="username">
+                <input id="usernameInput" 
+                       name="username" 
+                       type="text" 
+                       required
+                       autocomplete="username"
+                       maxlength="32"
+                       aria-required="true"
+                       aria-describedby="usernameLabel"
+                       th:value="${username}">
+            </div>
+            
+            <div class="passwordLabel">
+                <label for="passwordInput" id="passwordLabel" th:text="#{pp.password} + ':'">Password:</label>
+            </div>
+            <div id="password" class="password">
+                <input id="passwordInput" 
+                       name="password" 
+                       type="password" 
+                       required
+                       autocomplete="current-password"
+                       maxlength="32"
+                       aria-required="true"
+                       aria-describedby="passwordLabel">
+            </div>
+            
+            <div id="button" class="buttonPanel">
+                <button id="loginButton" 
+                        type="submit" 
+                        class="btnClass"
+                        th:text="#{pp.login}">Login</button>
+            </div>
+            
+            <div class="copyright">Copyright and all database rights by IGT</div>
+            
+            <div id="msg" class="msg" role="alert" aria-live="polite" aria-atomic="true">
+                <div id="error" class="errorText" th:if="${error}" th:text="${error}"></div>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

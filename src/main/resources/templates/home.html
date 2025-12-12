@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:lang="${#locale.language}" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" th:href="@{/images/favicon.ico}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
+    <title th:text="#{pp.application_name} + ' ' + #{pp.home}">G2PG Test Customer Service :: Home</title>
+    <script type="text/javascript" th:inline="javascript">
+        window.location = /*[[${customerServiceUrl}]]*/ '';
+    </script>
+</head>
+<body>
+    <main>
+        <div class="spacer10"></div>
+        <div class="spacer10"></div>
+        <img th:src="@{/images/clientlogo.png}" 
+             alt="Client logo" 
+             title="Client logo">
+        <noscript>
+            <p>Please <a th:href="${customerServiceUrl}">click here</a> to continue to the customer service portal.</p>
+        </noscript>
+    </main>
+</body>
+</html>
