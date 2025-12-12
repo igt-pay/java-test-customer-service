@@ -24,6 +24,13 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     
+        <scm>
+        <url>https://github.com/igt-pay/java-test-customer-service</url>
+        <connection>scm:git:git@github.com:igt-pay/java-test-customer-service.git</connection>
+        <developerConnection>scm:git:https://github.com/igt-pay/java-test-customer-service.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
     <dependencies>
         <!-- Spring Boot Starters -->
         <dependency>
@@ -70,5 +77,20 @@
             </plugin>
         </plugins>
     </build>
+    <repositories>
+        <repository>
+            <id>pay-public</id>
+            <url>https://repository.payle.igtplaydigital.com/repository/maven-public/</url>
+        </repository>
+    </repositories>
+    <distributionManagement>
+        <repository>
+            <id>pay-release</id>
+            <url>https://repository.payle.igtplaydigital.com/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>pay-snapshot</id>
+            <url>https://repository.payle.igtplaydigital.com/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
-
