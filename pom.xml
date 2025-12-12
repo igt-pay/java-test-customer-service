@@ -16,8 +16,7 @@
     <artifactId>test-customer-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>G2PG Test Customer Service</name>
-    <description>Test Customer Service - Spring Boot Migration</description>
-    
+
     <properties>
         <java.version>21</java.version>
         <maven.compiler.source>21</maven.compiler.source>

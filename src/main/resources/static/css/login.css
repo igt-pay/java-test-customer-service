@@ -33,20 +33,12 @@ input:invalid {
 	font-size: 11px;
 }
 
-.btnClassSmall {
-	border:0; color: #000033; 
-	cursor: pointer; width: 63px; height: 18px; 
-	background: url('../images/button_small.png');
-	font-size: 11px;
-}
-
 .logo { position:absolute; left:80px; top:60px; z-index:1; }
 .usernameLabel { position:absolute; left:305px; top:140px; z-index:1; }
 .username { position:absolute; left:305px; top:153px; z-index:1; }
 .passwordLabel { position:absolute; left:305px; top:175px; z-index:1; }
 .password { position:absolute; left:305px; top:188px; z-index:1; }
 .buttonPanel { position:absolute; left:370px; top:215px; z-index:1; text-align:center; width:147px; }
-.useTestWallet { position:absolute; left:305px; top:215px; z-index:1; text-align:right; white-space: nowrap; }
 
 .copyright {
 	font-size: 9px; color: #eeeeee;
@@ -74,11 +66,7 @@ input:invalid {
 	text-overflow: ellipsis;
 }
 .msg { position:absolute; left:100px; top:365px; z-index:1; }
-.passwordMsg { position:absolute; left:360px; top:150px; z-index:1; }
-.spacer { width: 1px; }
-.red { color: red; }
 
-/* Screen reader only class for accessibility */
 .sr-only {
 	position: absolute;
 	width: 1px;
