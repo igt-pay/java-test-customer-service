@@ -37,17 +37,4 @@ public interface TestWalletService {
         @WebParam(name = "loginRequest", targetNamespace = "http://com.finsoft.g2pg", partName = "loginRequest")
         LoginRequest loginRequest);
 
-//    /**
-//     *
-//     * @param temporarySessionIdRequest
-//     * @return
-//     *     returns com.igt.pay.testwallet.wallet.api.testwallet.TemporarySessionIdResponse
-//     */
-//    @WebMethod(operationName = "GenerateTemporarySessionId")
-//    @WebResult(name = "temporarySessionIdResponse", targetNamespace = "http://com.finsoft.g2pg", partName = "temporarySessionIdResponse")
-//    @Action(input = "http://com.finsoft.g2pg/TestWalletService/GenerateTemporarySessionIdRequest", output = "http://com.finsoft.g2pg/TestWalletService/GenerateTemporarySessionIdResponse")
-//    public TemporarySessionIdResponse generateTemporarySessionId(
-//        @WebParam(name = "temporarySessionIdRequest", targetNamespace = "http://com.finsoft.g2pg", partName = "temporarySessionIdRequest")
-//        TemporarySessionIdRequest temporarySessionIdRequest);
-
 }

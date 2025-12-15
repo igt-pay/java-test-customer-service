@@ -38,7 +38,7 @@
         const errorDiv = document.getElementById('error');
         
         if (!usernameInput) {
-            return true; // If element not found, allow submission
+            return true;
         }
 
         const username = usernameInput.value.trim();
@@ -48,7 +48,6 @@
             event.preventDefault();
             usernameInput.focus();
             
-            // Clear any existing error messages
             if (errorDiv) {
                 errorDiv.textContent = '';
             }
@@ -56,7 +55,6 @@
             return false;
         }
 
-        // Clear error messages on valid input
         if (errorDiv) {
             errorDiv.textContent = '';
         }
@@ -64,14 +62,12 @@
         return true;
     }
 
-    // Initialize when DOM is ready
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
     } else {
         init();
     }
 
-    // Attach event listeners when DOM is ready
     document.addEventListener('DOMContentLoaded', function() {
         const loginForm = document.getElementById('loginForm');
         const langSelect = document.getElementById('locales');

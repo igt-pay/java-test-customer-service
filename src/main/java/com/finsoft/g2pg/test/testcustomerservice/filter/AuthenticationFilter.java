@@ -28,7 +28,6 @@ public class AuthenticationFilter implements Filter {
         String requestURI = httpRequest.getRequestURI();
         String contextPath = httpRequest.getContextPath();
         
-        // Get the path relative to context path
         String pathWithinContext = requestURI.substring(contextPath.length());
         if (!pathWithinContext.startsWith("/")) {
             pathWithinContext = "/" + pathWithinContext;
