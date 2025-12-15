@@ -1,15 +1,6 @@
-/**
- * Login page JavaScript
- * Handles form validation, language switching, and page initialization
- */
-
 (function() {
     'use strict';
 
-    /**
-     * Initialize the login page
-     * Sets focus on username input when page loads
-     */
     function init() {
         const usernameInput = document.getElementById('usernameInput');
         if (usernameInput) {
@@ -17,10 +8,6 @@
         }
     }
 
-    /**
-     * Handle language selection change
-     * Redirects to login page with selected language parameter
-     */
     function handleLanguageChange() {
         const langCombo = document.getElementById('locales');
         if (langCombo && langCombo.value) {
@@ -28,11 +15,6 @@
         }
     }
 
-    /**
-     * Validate login form before submission
-     * @param {Event} event - Form submit event
-     * @returns {boolean} - True if form is valid, false otherwise
-     */
     function validateForm(event) {
         const usernameInput = document.getElementById('usernameInput');
         const errorDiv = document.getElementById('error');
