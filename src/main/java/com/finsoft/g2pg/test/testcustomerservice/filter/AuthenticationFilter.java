@@ -26,13 +26,20 @@ public class AuthenticationFilter implements Filter {
         HttpSession session = httpRequest.getSession(false);
 
         String requestURI = httpRequest.getRequestURI();
+        String contextPath = httpRequest.getContextPath();
+        
+        // Get the path relative to context path
+        String pathWithinContext = requestURI.substring(contextPath.length());
+        if (!pathWithinContext.startsWith("/")) {
+            pathWithinContext = "/" + pathWithinContext;
+        }
 
-        if (requestURI.equals("/") ||
-                requestURI.equals("/login") ||
-                requestURI.startsWith("/css/") ||
-                requestURI.startsWith("/js/") ||
-                requestURI.startsWith("/images/") ||
-                requestURI.startsWith("/error")) {
+        if (pathWithinContext.equals("/") ||
+                pathWithinContext.equals("/login") ||
+                pathWithinContext.startsWith("/css/") ||
+                pathWithinContext.startsWith("/js/") ||
+                pathWithinContext.startsWith("/images/") ||
+                pathWithinContext.startsWith("/error")) {
             chain.doFilter(request, response);
             return;
         }
@@ -41,9 +48,9 @@ public class AuthenticationFilter implements Filter {
             chain.doFilter(request, response);
         } else {
             if (isSessionInvalid(httpRequest)) {
-                httpResponse.sendRedirect(httpRequest.getContextPath() + INDEX_PAGE);
+                httpResponse.sendRedirect(contextPath + INDEX_PAGE);
             } else {
-                httpResponse.sendRedirect(httpRequest.getContextPath() + LOGIN_PAGE);
+                httpResponse.sendRedirect(contextPath + LOGIN_PAGE);
             }
         }
     }

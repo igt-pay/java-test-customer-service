@@ -24,7 +24,7 @@
     function handleLanguageChange() {
         const langCombo = document.getElementById('locales');
         if (langCombo && langCombo.value) {
-            window.location.href = '/login?lang=' + langCombo.value;
+            window.location.href = './login?lang=' + langCombo.value;
         }
     }
 
