@@ -22,13 +22,12 @@ public class ITestWalletServiceImpl {
         log.info("Creating {}", this.getClass().getName());
     }
 
-    public String login(String username, String password) {
-        log.info("Test Wallet login({}, xxxxx)", username);
+    public String login(String username) {
+        log.info("Test Wallet login({})", username);
 
         try {
             LoginRequest req = new LoginRequest();
             req.setUsername(username);
-            req.setPassword(password);
 
             LoginResponse res = service.login(req);
 

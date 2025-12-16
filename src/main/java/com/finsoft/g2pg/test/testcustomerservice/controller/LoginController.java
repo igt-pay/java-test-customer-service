@@ -69,7 +69,6 @@ public class LoginController {
     @PostMapping("/login")
     public String login(
             @RequestParam(required = false) String username,
-            @RequestParam(required = false) String password,
             HttpServletRequest request,
             HttpSession session,
             RedirectAttributes redirectAttributes,
@@ -85,7 +84,7 @@ public class LoginController {
                 newSession.setAttribute("controller", controllerObj);
             }
 
-            String tempSessId = testWalletService.login(username, password);
+            String tempSessId = testWalletService.login(username);
             if (Util.isNullOrEmpty(tempSessId)) {
                 outcome = ReturnCodes.FAILURE;
                 try {
