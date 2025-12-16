@@ -25,7 +25,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     
-        <scm>
+    <scm>
         <url>https://github.com/igt-pay/java-test-customer-service</url>
         <connection>scm:git:git@github.com:igt-pay/java-test-customer-service.git</connection>
         <developerConnection>scm:git:https://github.com/igt-pay/java-test-customer-service.git</developerConnection>
